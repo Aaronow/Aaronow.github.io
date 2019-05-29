@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Hexo博客加载Live2D动画模型挂件]]></title>
+    <url>%2F2019%2F05%2F29%2FHexo%E5%8D%9A%E5%AE%A2%E5%8A%A0%E8%BD%BDLive2D%E5%8A%A8%E7%94%BB%E6%A8%A1%E5%9E%8B%E6%8C%82%E4%BB%B6%2F</url>
+    <content type="text"><![CDATA[一、简介 Live2D的工作原理是通过将一系列的2D图像进行平移、旋转和变形等操作，生成一个具有自然动画效果的可动人物模型。由于Live2D只需一系列2D原图即可生成具有类似于3D动画效果的模型，比3D建模耗费的时间和成本更少，因此受到很多游戏制作者，特别是小成本AVG和手游作者的喜爱。另外，Live2D生成的模型相对于真正的3D模型，可以更好地还原手绘风格。Live2D生成的模型并不是真正的3D模型，因此具有一些局限性，比如无法进行大幅度的转身动作。但是貌似Live2D Euclid可以达到这一效果。 二、安装&amp;部署安装 Live2D 模块 使用如下指令安装 Live2D 模块、注意需要在博客的根目录通过终端执行 1npm install –save hexo-helper-live2d 如果不想使用、想彻底卸载，命令如下： 1npm install –save hexo-helper-live2d 安装完成之后，就会在博客的根目录 package.json 文件中存在依赖 在博客根目录的 node_moduels 文件夹下可以看到安装的 Live2D 模块 了解更多可参考 github 和 官网 配置喜欢的动画模型 有非常多的 Live2D 动画模型供我们选择： 动画模型效果可以参考 这里 对应的模块下载在 这里 如我使用的是 haruto ，可以直接在上面的链接下载: 手动下载完成之后将 packages 里面的所有文件拷贝到博客根目录的 node_moduels 文件夹下。 也可以使用包管理器安装，命令格式：npm install 模型的包名 ，也会安装在 node_moduels 目录下。 配置博客的站点文件 打开博客根目录的配置文件_config.yml ，添加如下内容： 12345678910111213141516171819202122# Live2D## https://github.com/xiazeyu/live2d-widget.js## https://l2dwidget.js.org/docs/class/src/index.js~L2Dwidget.html#instance-method-initlive2d: model: scale: 1 hHeadPos: 0.5 vHeadPos: 0.618 use: live2d-widget-model-tororo // 下载的动画模型名称 display: superSample: 2 width: 120 height: 200 position: left // 模型在网页显示位置 hOffset: 20 vOffset: 50 mobile: show: true // 移动设备是否显示 scale: 0.5 react: opacityDefault: 0.7 opacityOnHover: 0.2 部署到网站 所有工作完成之后，就可以在自己的网站部署并显示出来了。 清空一下本地缓存 hexo clean 生成博客的文件 hexo g 将文件提交到GitHub仓库并开始部署 hexo d ，至此刷新你的网站，就可以在文章页面看到你配置的 Live2D 动画挂件了。 三、发布自己的 Live2D 模型包 如果你想发布自己的 Live2D 动画模型包，可以参考如下步骤： 新建一个目录, 用Node环境执行 npm init , 包名推荐格式如：live2d-widget-model-xxx。 在刚刚创建的目录下创建 assets 子目录, 把你的模型文件放进去. 执行 npm publish 命令来发布. 此时就使用 npm install –save live2d-widget-model-xxx 来安装自定义的模型包了。 安装完成后就可以在配置文件 _config.yml 中 model.use 修改包名来使用了.]]></content>
+      <categories>
+        <category>文章</category>
+      </categories>
+      <tags>
+        <tag>hexo美化</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[markdown测试]]></title>
     <url>%2F2019%2F05%2F27%2FMarkdown%E6%B5%8B%E8%AF%95%2F</url>
     <content type="text"><![CDATA[一级标题二级标题三级标题 列表1 列表2 a 子列表1 b 子列表2 列表3 文本 超链接 斜体字粗体字 &lt;html&gt;&lt;/html&gt; 12345&lt;html&gt; &lt;head&gt; &lt;title&gt;标题&lt;/title&gt; &lt;/head&gt;&lt;/html&gt; END]]></content>
