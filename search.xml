@@ -1,30 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title><![CDATA[Hexo博客加载Live2D动画模型挂件]]></title>
-    <url>%2F2019%2F05%2F29%2FHexo%E5%8D%9A%E5%AE%A2%E5%8A%A0%E8%BD%BDLive2D%E5%8A%A8%E7%94%BB%E6%A8%A1%E5%9E%8B%E6%8C%82%E4%BB%B6%2F</url>
-    <content type="text"><![CDATA[简介 Live2D的工作原理是通过将一系列的2D图像进行平移、旋转和变形等操作，生成一个具有自然动画效果的可动人物模型。由于Live2D只需一系列2D原图即可生成具有类似于3D动画效果的模型，比3D建模耗费的时间和成本更少，因此受到很多游戏制作者，特别是小成本AVG和手游作者的喜爱。另外，Live2D生成的模型相对于真正的3D模型，可以更好地还原手绘风格。Live2D生成的模型并不是真正的3D模型，因此具有一些局限性，比如无法进行大幅度的转身动作。但是貌似Live2D Euclid可以达到这一效果。 安装&amp;部署安装 Live2D 模块 使用如下指令安装 Live2D 模块、注意需要在博客的根目录通过终端执行 1npm install –save hexo-helper-live2d 如果不想使用、想彻底卸载，命令如下： 1npm install –save hexo-helper-live2d 安装完成之后，就会在博客的根目录 package.json 文件中存在依赖 在博客根目录的 node_moduels 文件夹下可以看到安装的 Live2D 模块 了解更多可参考 github 和 官网 配置喜欢的动画模型 有非常多的 Live2D 动画模型供我们选择： 动画模型效果可以参考 这里 对应的模块下载在 这里 如我使用的是 haruto ，可以直接在上面的链接下载: 手动下载完成之后将 packages 里面的所有文件拷贝到博客根目录的 node_moduels 文件夹下。 也可以使用包管理器安装，命令格式：npm install 模型的包名 ，也会安装在 node_moduels 目录下。 配置博客的站点文件 打开博客根目录的配置文件_config.yml ，添加如下内容： 12345678910111213141516171819202122# Live2D## https://github.com/xiazeyu/live2d-widget.js## https://l2dwidget.js.org/docs/class/src/index.js~L2Dwidget.html#instance-method-initlive2d: model: scale: 1 hHeadPos: 0.5 vHeadPos: 0.618 use: live2d-widget-model-tororo // 下载的动画模型名称 display: superSample: 2 width: 120 height: 200 position: left // 模型在网页显示位置 hOffset: 20 vOffset: 50 mobile: show: true // 移动设备是否显示 scale: 0.5 react: opacityDefault: 0.7 opacityOnHover: 0.2 部署到网站 所有工作完成之后，就可以在自己的网站部署并显示出来了。 清空一下本地缓存 hexo clean 生成博客的文件 hexo g 将文件提交到GitHub仓库并开始部署 hexo d ，至此刷新你的网站，就可以在文章页面看到你配置的 Live2D 动画挂件了。 发布自己的 Live2D 模型包 如果你想发布自己的 Live2D 动画模型包，可以参考如下步骤： 新建一个目录, 用Node环境执行 npm init , 包名推荐格式如：live2d-widget-model-xxx。 在刚刚创建的目录下创建 assets 子目录, 把你的模型文件放进去. 执行 npm publish 命令来发布. 此时就使用 npm install –save live2d-widget-model-xxx 来安装自定义的模型包了。 安装完成后就可以在配置文件 _config.yml 中 model.use 修改包名来使用了.]]></content>
+<search> 
+  
+  
+    
+    <entry>
+      <title>Hexo博客加载Live2D动画模型挂件</title>
+      <link href="/2019/05/29/Hexo%E5%8D%9A%E5%AE%A2%E5%8A%A0%E8%BD%BDLive2D%E5%8A%A8%E7%94%BB%E6%A8%A1%E5%9E%8B%E6%8C%82%E4%BB%B6/"/>
+      <url>/2019/05/29/Hexo%E5%8D%9A%E5%AE%A2%E5%8A%A0%E8%BD%BDLive2D%E5%8A%A8%E7%94%BB%E6%A8%A1%E5%9E%8B%E6%8C%82%E4%BB%B6/</url>
+      
+        <content type="html"><![CDATA[<h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a><strong>简介</strong></h1><blockquote><p><strong>Live2D的工作原理是通过将一系列的2D图像进行平移、旋转和变形等操作，生成一个具有自然动画效果的可动人物模型。<a id="more"></a>由于Live2D只需一系列2D原图即可生成具有类似于3D动画效果的模型，比3D建模耗费的时间和成本更少，因此受到很多游戏制作者，特别是小成本AVG和手游作者的喜爱。另外，Live2D生成的模型相对于真正的3D模型，可以更好地还原手绘风格。<br>Live2D生成的模型并不是真正的3D模型，因此具有一些局限性，比如无法进行大幅度的转身动作。但是貌似<font color="#dd0000"><code>Live2D Euclid</code></font>可以达到这一效果。</strong></p></blockquote><h1 id="安装-amp-部署"><a href="#安装-amp-部署" class="headerlink" title="安装&amp;部署"></a><strong>安装&amp;部署</strong></h1><h2 id="安装Live2D模块"><a href="#安装Live2D模块" class="headerlink" title="安装Live2D模块"></a>安装<font color="#dd0000"><code>Live2D</code></font>模块</h2><ul><li><p>使用如下指令安装<font color="#dd0000"><code>Live2D</code></font>模块、<font color="#dd0000"><code>注意</code></font>需要在博客的<font color="#dd0000"><code>根目录</code></font>通过终端执行</p><table><tr><td bgcolor="#e3f2fd">npm install --save hexo-helper-live2d</td></tr></table></li><li><p>如果不想使用、想彻底卸载，命令如下：</p><table><tr><td bgcolor="#e3f2fd">npm install --save hexo-helper-live2d</td></tr></table>    </li><li><p>安装完成之后，就会在博客的根目录<font color="#dd0000"><code>package.json</code></font>文件中存在依赖</p></li></ul><p><img src="https://i.loli.net/2019/05/30/5ceeb464c592b44530.png" alt="图片"></p><ul><li>在博客根目录的<font color="#dd0000"><code>node_moduels</code></font>文件夹下可以看到安装的<font color="#dd0000"><code>Live2D</code></font>模块</li></ul><p><img src="https://i.loli.net/2019/05/30/5ceeb805ca00c67548.jpg" alt="图片"></p><ul><li>了解更多可参考  <a href="https://github.com/EYHN/hexo-helper-live2d/blob/master/README.zh-CN.md" target="_blank" rel="noopener">github</a>  和 <a href="https://www.npmjs.com/package/hexo-helper-live2d" target="_blank" rel="noopener">官网</a></li></ul><h2 id="配置喜欢的动画模型"><a href="#配置喜欢的动画模型" class="headerlink" title="配置喜欢的动画模型"></a>配置喜欢的动画模型</h2><ul><li><p>有非常多的<font color="#dd0000"><code>Live2D</code></font>动画模型供我们选择：</p><ul><li><p>动画模型效果可以参考 <a href="https://huaji8.top/post/live2d-plugin-2.0/" target="_blank" rel="noopener">这里</a></p></li><li><p>对应的模块下载在 <a href="https://github.com/xiazeyu/live2d-widget-models" target="_blank" rel="noopener">这里</a></p></li></ul></li><li><p>如我使用的是<font color="#dd0000"><code>haruto</code></font>，可以直接在上面的链接下载:</p><ul><li><p>手动下载完成之后将<font color="#dd0000"><code>packages</code></font>里面的所有文件拷贝到博客根目录的<font color="#dd0000"><code>node_moduels</code></font>文件夹下。</p></li><li><p>也可以使用包管理器安装，命令格式：<font color="#dd0000"><code>npm install 模型的包名</code></font>，也会安装在<font color="#dd0000"><code>node_moduels</code></font>目录下。</p></li></ul></li><li><p>配置博客的站点文件</p><ul><li><p>打开博客根目录的配置文件<font color="#dd0000"><code>_config.yml</code></font>，添加如下内容：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"># Live2D</span><br><span class="line">## https://github.com/xiazeyu/live2d-widget.js</span><br><span class="line">## https://l2dwidget.js.org/docs/class/src/index.js~L2Dwidget.html#instance-method-init</span><br><span class="line">live2d:</span><br><span class="line">  model:</span><br><span class="line">    scale: 1</span><br><span class="line">    hHeadPos: 0.5</span><br><span class="line">    vHeadPos: 0.618</span><br><span class="line">    use: live2d-widget-model-tororo // 下载的动画模型名称</span><br><span class="line">  display:</span><br><span class="line">   superSample: 2</span><br><span class="line">   width: 120</span><br><span class="line">   height: 200</span><br><span class="line">   position: left // 模型在网页显示位置</span><br><span class="line">   hOffset: 20</span><br><span class="line">   vOffset: 50</span><br><span class="line"> mobile:</span><br><span class="line">   show: true  // 移动设备是否显示</span><br><span class="line">   scale: 0.5</span><br><span class="line"> react:</span><br><span class="line">   opacityDefault: 0.7</span><br><span class="line">   opacityOnHover: 0.2</span><br></pre></td></tr></table></figure></li></ul></li></ul><h2 id="部署到网站"><a href="#部署到网站" class="headerlink" title="部署到网站"></a>部署到网站</h2><ul><li><p>所有工作完成之后，就可以在自己的网站部署并显示出来了。</p><ul><li><p>清空一下本地缓存<font color="#dd0000"><code>hexo clean</code></font></p></li><li><p>生成博客的文件<font color="#dd0000"><code>hexo g</code></font></p></li><li><p>将文件提交到GitHub仓库并开始部署<font color="#dd0000"><code>hexo d</code></font>，至此刷新你的网站，就可以在文章页面看到你配置的<font color="#dd0000"><code>Live2D</code></font>动画挂件了。</p></li></ul></li></ul><h1 id="发布自己的Live2D模型包"><a href="#发布自己的Live2D模型包" class="headerlink" title="发布自己的Live2D模型包"></a><strong>发布自己的<font color="#dd0000"><code>Live2D</code></font>模型包</strong></h1><ul><li><p>如果你想发布自己的<font color="#dd0000"><code>Live2D</code></font>动画模型包，可以参考如下步骤：</p><ul><li><p>新建一个目录, 用Node环境执行<font color="#dd0000"><code>npm init</code></font>, 包名推荐格式如：<font color="#dd0000"><code>live2d-widget-model-xxx</code></font>。</p></li><li><p>在刚刚创建的目录下创建<font color="#dd0000"><code>assets</code></font>子目录, 把你的模型文件放进去.</p></li><li><p>执行<font color="#dd0000"><code>npm publish</code></font>命令来发布.</p></li><li><p>此时就使用<font color="#dd0000"><code>npm install --save live2d-widget-model-xxx</code></font>来安装自定义的模型包了。</p></li><li><p>安装完成后就可以在配置文件<font color="#dd0000"><code>_config.yml</code></font>中 <font color="#dd0000"><code>model.use</code></font>修改包名来使用了.</p></li></ul></li></ul>]]></content>
+      
+      
       <categories>
-        <category>文章</category>
+          
+          <category> 文章 </category>
+          
       </categories>
-      <tags>
-        <tag>hexo美化</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[markdown测试]]></title>
-    <url>%2F2019%2F05%2F27%2FMarkdown%E6%B5%8B%E8%AF%95%2F</url>
-    <content type="text"><![CDATA[一级标题二级标题三级标题 列表1 列表2 a 子列表1 b 子列表2 列表3 文本 超链接 斜体字粗体字 &lt;html&gt;&lt;/html&gt; 12345&lt;html&gt; &lt;head&gt; &lt;title&gt;标题&lt;/title&gt; &lt;/head&gt;&lt;/html&gt; END]]></content>
+      
+      
+        <tags>
+            
+            <tag> hexo美化 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>markdown测试</title>
+      <link href="/2019/05/27/Markdown%E6%B5%8B%E8%AF%95/"/>
+      <url>/2019/05/27/Markdown%E6%B5%8B%E8%AF%95/</url>
+      
+        <content type="html"><![CDATA[<p><img src="https://i.loli.net/2019/05/28/5cec15deb564570344.jpg" alt="图片"></p><h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><a id="more"></a><ul><li>列表1</li><li>列表2<br> a 子列表1<br> b 子列表2</li><li>列表3</li></ul><hr><p>文本</p><hr><p><a href="https://www.baidu.com" target="_blank" rel="noopener">超链接</a></p><p><em>斜体字</em><br><strong>粗体字</strong></p><p><code>&lt;html&gt;&lt;/html&gt;</code></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;title&gt;标题&lt;/title&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure><blockquote><p>END</p></blockquote>]]></content>
+      
+      
       <categories>
-        <category>文章</category>
+          
+          <category> 文章 </category>
+          
       </categories>
-      <tags>
-        <tag>分享</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2F2019%2F05%2F27%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
-  </entry>
+      
+      
+        <tags>
+            
+            <tag> 分享 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2019/05/27/hello-world/"/>
+      <url>/2019/05/27/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
 </search>
