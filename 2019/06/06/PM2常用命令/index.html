@@ -121,10 +121,12 @@
 <meta property="og:site_name" content="Aaron&#39;s Blog">
 <meta property="og:description" content="PM2是node进程管理工具，可以利用它来简化很多node应用管理的繁琐任务，如性能监控、自动重启、负载均衡等，而且使用非常简单。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-06T07:55:13.832Z">
+<meta property="og:image" content="https://i.loli.net/2019/06/06/5cf8ca16dc61063326.jpg">
+<meta property="og:updated_time" content="2019-06-06T08:10:52.081Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PM2常用命令">
 <meta name="twitter:description" content="PM2是node进程管理工具，可以利用它来简化很多node应用管理的繁琐任务，如性能监控、自动重启、负载均衡等，而且使用非常简单。">
+<meta name="twitter:image" content="https://i.loli.net/2019/06/06/5cf8ca16dc61063326.jpg">
 
 
 
@@ -426,7 +428,7 @@
                 
               
 
-              <time title="创建时间：2019-06-06 15:27:23 / 修改时间：15:55:13" itemprop="dateCreated datePublished" datetime="2019-06-06T15:27:23+08:00">2019-06-06</time>
+              <time title="创建时间：2019-06-06 15:27:23 / 修改时间：16:10:52" itemprop="dateCreated datePublished" datetime="2019-06-06T15:27:23+08:00">2019-06-06</time>
             
 
             
@@ -503,7 +505,7 @@
       
 
       
-        <p><strong>PM2是node进程管理工具，可以利用它来简化很多node应用管理的繁琐任务，如性能监控、自动重启、负载均衡等，而且使用非常简单。</strong></p>
+        <p><img src="https://i.loli.net/2019/06/06/5cf8ca16dc61063326.jpg" alt="图片"><br><strong>PM2是node进程管理工具，可以利用它来简化很多node应用管理的繁琐任务，如性能监控、自动重启、负载均衡等，而且使用非常简单。</strong></p>
 <a id="more"></a>
 
 <h1 id="PM2常用命令"><a href="#PM2常用命令" class="headerlink" title="PM2常用命令"></a><strong>PM2常用命令</strong></h1><h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># pm2 start app.js                # 启动app.js应用程序</span><br><span class="line"># pm2 start app.js -i 4           # cluster mode 模式启动4个app.js的应用实例，4个应用程序会自动进行负载均衡</span><br><span class="line"># pm2 start script.sh             # 启动 bash 脚本</span><br><span class="line"># pm2 start app.js --name=&quot;api&quot;   # 启动应用程序并命名为 &quot;api&quot;</span><br><span class="line"># pm2 start app.js --name my-api  # my-api为PM2进程名称</span><br><span class="line"># pm2 start app.js -i 0           # 根据CPU核数启动进程个数</span><br><span class="line"># pm2 start app.js --watch        # 实时监控app.js的方式启动，当app.js文件有变动时，pm2会自动reload</span><br></pre></td></tr></table></figure>
@@ -526,7 +528,7 @@
 
 <h2 id="更多命令参数请查看帮助"><a href="#更多命令参数请查看帮助" class="headerlink" title="更多命令参数请查看帮助"></a>更多命令参数请查看帮助</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># pm2 --help                    # 查看帮助</span><br></pre></td></tr></table></figure>
 
-
+<h1 id="官网"><a href="#官网" class="headerlink" title="官网"></a><a href="http://pm2.keymetrics.io/" target="_blank" rel="noopener">官网</a></h1>
       
     </div>
 
@@ -823,7 +825,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#PM2常用命令"><span class="nav-number">1.</span> <span class="nav-text">PM2常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#启动"><span class="nav-number">1.1.</span> <span class="nav-text">启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看进程"><span class="nav-number">1.2.</span> <span class="nav-text">查看进程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#监控"><span class="nav-number">1.3.</span> <span class="nav-text">监控</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#停止"><span class="nav-number">1.4.</span> <span class="nav-text">停止</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重载"><span class="nav-number">1.5.</span> <span class="nav-text">重载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重启"><span class="nav-number">1.6.</span> <span class="nav-text">重启</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除PM2进程"><span class="nav-number">1.7.</span> <span class="nav-text">删除PM2进程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#日志操作"><span class="nav-number">1.8.</span> <span class="nav-text">日志操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#升级PM2"><span class="nav-number">1.9.</span> <span class="nav-text">升级PM2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多命令参数请查看帮助"><span class="nav-number">1.10.</span> <span class="nav-text">更多命令参数请查看帮助</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#PM2常用命令"><span class="nav-number">1.</span> <span class="nav-text">PM2常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#启动"><span class="nav-number">1.1.</span> <span class="nav-text">启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看进程"><span class="nav-number">1.2.</span> <span class="nav-text">查看进程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#监控"><span class="nav-number">1.3.</span> <span class="nav-text">监控</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#停止"><span class="nav-number">1.4.</span> <span class="nav-text">停止</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重载"><span class="nav-number">1.5.</span> <span class="nav-text">重载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重启"><span class="nav-number">1.6.</span> <span class="nav-text">重启</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除PM2进程"><span class="nav-number">1.7.</span> <span class="nav-text">删除PM2进程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#日志操作"><span class="nav-number">1.8.</span> <span class="nav-text">日志操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#升级PM2"><span class="nav-number">1.9.</span> <span class="nav-text">升级PM2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多命令参数请查看帮助"><span class="nav-number">1.10.</span> <span class="nav-text">更多命令参数请查看帮助</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#官网"><span class="nav-number">2.</span> <span class="nav-text">官网</span></a></li></ol></div>
             
 
           </div>
