@@ -1,3 +1,4 @@
+http://aaronow.cn/2019/06/06/PM2常用命令/
 http://aaronow.cn/2019/06/02/Windows 10版本business_editions和consumer_editions的区别/
 http://aaronow.cn/2019/05/29/Hexo博客加载Live2D动画模型挂件/
 http://aaronow.cn/2019/05/27/Markdown测试/
