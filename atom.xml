@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://aaronow.cn/"/>
-  <updated>2019-06-06T08:10:52.081Z</updated>
+  <updated>2020-02-28T09:45:38.847Z</updated>
   <id>http://aaronow.cn/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Github Page https证书问题</title>
+    <link href="http://aaronow.cn/2020/02/28/Github%20Page%20https%E8%AF%81%E4%B9%A6%E9%97%AE%E9%A2%98/"/>
+    <id>http://aaronow.cn/2020/02/28/Github Page https证书问题/</id>
+    <published>2020-02-28T08:13:46.962Z</published>
+    <updated>2020-02-28T09:45:38.847Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://s2.ax1x.com/2020/02/28/3D0GCV.png" alt="图片"></p><p><strong>Github Page <code>https证书</code>问题</strong></p><a id="more"></a><h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a><strong>起因</strong></h1><ul><li><p>偶然间发现网站的证书过期没有自动续签</p><p><img src="https://s2.ax1x.com/2020/02/28/3D6359.jpg" alt="图片"></p></li><li><p>由于网站使用的是<code>github page</code>的静态页面，于是我赶紧检查了github的仓库设置</p><p><img src="https://s2.ax1x.com/2020/02/28/3Dsree.jpg" alt="图片"></p></li><li><p>果然出了问题，<code>实施https</code>没有正常开启，也就没有办法自动续签，同时还提示了无法检索域的<code>DNS记录</code>，于是我查看了域名的解析记录<br><img src="https://s2.ax1x.com/2020/02/28/3DcUWn.png" alt="图片"></p></li><li><p>域名解析一切正常，于是我开始寻找解决办法</p></li></ul><h1 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a><strong>解决问题</strong></h1><h2 id="第一次尝试（未解决）"><a href="#第一次尝试（未解决）" class="headerlink" title="第一次尝试（未解决）"></a><strong>第一次尝试（未解决）</strong></h2><ul><li><p>在网上一番搜索以后发现一封关于此问题的客服邮件：</p><p><img src="https://s2.ax1x.com/2020/02/28/3D22Kx.png" alt="图片"></p></li><li><p>按照邮件要求，我将<code>A解析</code>修改为指向<code>四个</code>ipv4地址<code>其中之一</code>，<code>删除</code>GitHub Page中的自定义域名并<code>再次添加</code>，尝试后依然无法打开实施https，多次尝试无果后我开始研究其他解决方案。</p></li></ul><h2 id="第二次尝试（解决）"><a href="#第二次尝试（解决）" class="headerlink" title="第二次尝试（解决）"></a><strong>第二次尝试（解决）</strong></h2><p>  <img src="https://s2.ax1x.com/2020/02/28/3D5A58.png" alt="图片"></p><ul><li><p>我的博客同时托管在国内的coding上，于是我<code>停止解析</code>国内的静态页面，专心解决github page的问题。</p></li><li><p>再次<code>删除</code>GitHub仓库中的自定义域名并<code>添加</code>，打开博客网址后变成了这样：</p><p><img src="https://s2.ax1x.com/2020/02/28/3D5qMj.jpg" alt="图片"></p></li><li><p>证书下来了，但是依旧显示不安全，我查看了GitHub Page的设置：</p><p><img src="https://s2.ax1x.com/2020/02/28/3D5vd0.jpg" alt="图片"></p></li><li><p>显然，证书已经下来了，只是还没有<code>完成签发</code>，页面显示要等24h，实际上并不需要那么久，实测一个小时就完成签发。</p><p><img src="https://s2.ax1x.com/2020/02/28/3DISiT.jpg" alt="图片"></p></li><li><p>网站也不会再显示不安全，至此解决了问题</p></li></ul><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a><strong>总结</strong></h1><ul><li><p>由于同一域名同时解析到国内和国外<code>两大</code>代码托管平台，导致GitHub Page无法验证域名，<code>停止解析</code>后让GitHub签发证书，之后<code>开启</code>国内代码托管平台的解析就可以完美解决。</p></li><li><p><strong>在GitHub Page页面的实施https开启以后无需手动续签即可完成自动续签。</strong></p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://s2.ax1x.com/2020/02/28/3D0GCV.png&quot; alt=&quot;图片&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Github Page &lt;code&gt;https证书&lt;/code&gt;问题&lt;/strong&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="文章" scheme="http://aaronow.cn/categories/%E6%96%87%E7%AB%A0/"/>
+    
+    
+      <category term="github" scheme="http://aaronow.cn/tags/github/"/>
+    
+  </entry>
   
   <entry>
     <title>PM2常用命令</title>
