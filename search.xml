@@ -1,145 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-  
-    
-    <entry>
-      <title>Github Page https证书问题</title>
-      <link href="/2020/02/28/Github%20Page%20https%E8%AF%81%E4%B9%A6%E9%97%AE%E9%A2%98/"/>
-      <url>/2020/02/28/Github%20Page%20https%E8%AF%81%E4%B9%A6%E9%97%AE%E9%A2%98/</url>
-      
-        <content type="html"><![CDATA[<p><img src="https://s2.ax1x.com/2020/02/28/3D0GCV.png" alt="图片"></p><p><strong>Github Page <code>https证书</code>问题</strong></p><a id="more"></a><h1 id="起因"><a href="#起因" class="headerlink" title="起因"></a><strong>起因</strong></h1><ul><li><p>偶然间发现网站的证书过期没有自动续签</p><p><img src="https://s2.ax1x.com/2020/02/28/3D6359.jpg" alt="图片"></p></li><li><p>由于网站使用的是<code>github page</code>的静态页面，于是我赶紧检查了github的仓库设置</p><p><img src="https://s2.ax1x.com/2020/02/28/3Dsree.jpg" alt="图片"></p></li><li><p>果然出了问题，<code>实施https</code>没有正常开启，也就没有办法自动续签，同时还提示了无法检索域的<code>DNS记录</code>，于是我查看了域名的解析记录<br><img src="https://s2.ax1x.com/2020/02/28/3DcUWn.png" alt="图片"></p></li><li><p>域名解析一切正常，于是我开始寻找解决办法</p></li></ul><h1 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a><strong>解决问题</strong></h1><h2 id="第一次尝试（未解决）"><a href="#第一次尝试（未解决）" class="headerlink" title="第一次尝试（未解决）"></a><strong>第一次尝试（未解决）</strong></h2><ul><li><p>在网上一番搜索以后发现一封关于此问题的客服邮件：</p><p><img src="https://s2.ax1x.com/2020/02/28/3D22Kx.png" alt="图片"></p></li><li><p>按照邮件要求，我将<code>A解析</code>修改为指向<code>四个</code>ipv4地址<code>其中之一</code>，<code>删除</code>GitHub Page中的自定义域名并<code>再次添加</code>，尝试后依然无法打开实施https，多次尝试无果后我开始研究其他解决方案。</p></li></ul><h2 id="第二次尝试（解决）"><a href="#第二次尝试（解决）" class="headerlink" title="第二次尝试（解决）"></a><strong>第二次尝试（解决）</strong></h2><p>  <img src="https://s2.ax1x.com/2020/02/28/3D5A58.png" alt="图片"></p><ul><li><p>我的博客同时托管在国内的coding上，于是我<code>停止解析</code>国内的静态页面，专心解决github page的问题。</p></li><li><p>再次<code>删除</code>GitHub仓库中的自定义域名并<code>添加</code>，打开博客网址后变成了这样：</p><p><img src="https://s2.ax1x.com/2020/02/28/3D5qMj.jpg" alt="图片"></p></li><li><p>证书下来了，但是依旧显示不安全，我查看了GitHub Page的设置：</p><p><img src="https://s2.ax1x.com/2020/02/28/3D5vd0.jpg" alt="图片"></p></li><li><p>显然，证书已经下来了，只是还没有<code>完成签发</code>，页面显示要等24h，实际上并不需要那么久，实测一个小时就完成签发。</p><p><img src="https://s2.ax1x.com/2020/02/28/3DISiT.jpg" alt="图片"></p></li><li><p>网站也不会再显示不安全，至此解决了问题</p></li></ul><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a><strong>总结</strong></h1><ul><li><p>由于同一域名同时解析到国内和国外<code>两大</code>代码托管平台，导致GitHub Page无法验证域名，<code>停止解析</code>后让GitHub签发证书，之后<code>开启</code>国内代码托管平台的解析就可以完美解决。</p></li><li><p><strong>在GitHub Page页面的实施https开启以后无需手动续签即可完成自动续签。</strong></p></li></ul>]]></content>
-      
-      
+<search>
+  <entry>
+    <title><![CDATA[Github Page https证书问题]]></title>
+    <url>%2F2020%2F02%2F28%2FGithub%20Page%20https%E8%AF%81%E4%B9%A6%E9%97%AE%E9%A2%98%2F</url>
+    <content type="text"><![CDATA[Github Page https证书问题 起因 偶然间发现网站的证书过期没有自动续签 由于网站使用的是github page的静态页面，于是我赶紧检查了github的仓库设置 果然出了问题，实施https没有正常开启，也就没有办法自动续签，同时还提示了无法检索域的DNS记录，于是我查看了域名的解析记录 域名解析一切正常，于是我开始寻找解决办法 解决问题第一次尝试（未解决） 在网上一番搜索以后发现一封关于此问题的客服邮件： 按照邮件要求，我将A解析修改为指向四个ipv4地址其中之一，删除GitHub Page中的自定义域名并再次添加，尝试后依然无法打开实施https，多次尝试无果后我开始研究其他解决方案。 第二次尝试（解决） 我的博客同时托管在国内的coding上，于是我停止解析国内的静态页面，专心解决github page的问题。 再次删除GitHub仓库中的自定义域名并添加，打开博客网址后变成了这样： 证书下来了，但是依旧显示不安全，我查看了GitHub Page的设置： 显然，证书已经下来了，只是还没有完成签发，页面显示要等24h，实际上并不需要那么久，实测一个小时就完成签发。 网站也不会再显示不安全，至此解决了问题 总结 由于同一域名同时解析到国内和国外两大代码托管平台，导致GitHub Page无法验证域名，停止解析后让GitHub签发证书，之后开启国内代码托管平台的解析就可以完美解决。 在GitHub Page页面的实施https开启以后无需手动续签即可完成自动续签。]]></content>
       <categories>
-          
-          <category> 文章 </category>
-          
+        <category>文章</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> github </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>PM2常用命令</title>
-      <link href="/2019/06/06/PM2%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/"/>
-      <url>/2019/06/06/PM2%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</url>
-      
-        <content type="html"><![CDATA[<p><img src="https://i.loli.net/2019/06/06/5cf8ca16dc61063326.jpg" alt="图片"><br><strong>PM2是node进程管理工具，可以利用它来简化很多node应用管理的繁琐任务，如性能监控、自动重启、负载均衡等，而且使用非常简单。</strong></p><a id="more"></a><h1 id="PM2常用命令"><a href="#PM2常用命令" class="headerlink" title="PM2常用命令"></a><strong>PM2常用命令</strong></h1><h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># pm2 start app.js                # 启动app.js应用程序</span><br><span class="line"># pm2 start app.js -i 4           # cluster mode 模式启动4个app.js的应用实例，4个应用程序会自动进行负载均衡</span><br><span class="line"># pm2 start script.sh             # 启动 bash 脚本</span><br><span class="line"># pm2 start app.js --name=&quot;api&quot;   # 启动应用程序并命名为 &quot;api&quot;</span><br><span class="line"># pm2 start app.js --name my-api  # my-api为PM2进程名称</span><br><span class="line"># pm2 start app.js -i 0           # 根据CPU核数启动进程个数</span><br><span class="line"># pm2 start app.js --watch        # 实时监控app.js的方式启动，当app.js文件有变动时，pm2会自动reload</span><br></pre></td></tr></table></figure><h2 id="查看进程"><a href="#查看进程" class="headerlink" title="查看进程"></a>查看进程</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># pm2 list                      # 列表PM2启动的所有的应用程序</span><br><span class="line"># pm2 show 0 或者 # pm2 info 0  # 查看进程详细信息，0为PM2进程id</span><br></pre></td></tr></table></figure><h2 id="监控"><a href="#监控" class="headerlink" title="监控"></a>监控</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># pm2 monit                     # 显示每个应用程序的CPU和内存占用情况</span><br></pre></td></tr></table></figure><h2 id="停止"><a href="#停止" class="headerlink" title="停止"></a>停止</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># pm2 stop all                  # 停止PM2列表中所有的进程</span><br><span class="line"># pm2 stop 0                    # 停止PM2列表中进程为0的进程</span><br></pre></td></tr></table></figure><h2 id="重载"><a href="#重载" class="headerlink" title="重载"></a>重载</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># pm2 reload all                # 重载PM2列表中所有的进程</span><br><span class="line"># pm2 reload 0                  # 重载PM2列表中进程为0的进程</span><br></pre></td></tr></table></figure><h2 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># pm2 restart all               # 重启PM2列表中所有的进程</span><br><span class="line"># pm2 restart 0                 # 重启PM2列表中进程为0的进程</span><br></pre></td></tr></table></figure><h2 id="删除PM2进程"><a href="#删除PM2进程" class="headerlink" title="删除PM2进程"></a>删除PM2进程</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># pm2 delete 0                  # 删除PM2列表中进程为0的进程</span><br><span class="line"># pm2 delete all                # 删除PM2列表中所有的进程</span><br></pre></td></tr></table></figure><h2 id="日志操作"><a href="#日志操作" class="headerlink" title="日志操作"></a>日志操作</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># pm2 logs                      # 显示所有应用程序的日志</span><br><span class="line"># pm2 logs 0                    # 显示指定应用程序的日志，0为PM2进程id</span><br><span class="line"># pm2 flush                     # 清空所有日志文件</span><br><span class="line"># pm2 reloadLogs                # 重载所有日志</span><br></pre></td></tr></table></figure><h2 id="升级PM2"><a href="#升级PM2" class="headerlink" title="升级PM2"></a>升级PM2</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># npm install pm2@lastest -g    # 安装最新的PM2版本</span><br><span class="line"># pm2 updatePM2                 # 升级pm2</span><br></pre></td></tr></table></figure><h2 id="更多命令参数请查看帮助"><a href="#更多命令参数请查看帮助" class="headerlink" title="更多命令参数请查看帮助"></a>更多命令参数请查看帮助</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># pm2 --help                    # 查看帮助</span><br></pre></td></tr></table></figure><h1 id="官网"><a href="#官网" class="headerlink" title="官网"></a><a href="http://pm2.keymetrics.io/" target="_blank" rel="noopener">官网</a></h1>]]></content>
-      
-      
+      <tags>
+        <tag>github</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[PM2常用命令]]></title>
+    <url>%2F2019%2F06%2F06%2FPM2%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%2F</url>
+    <content type="text"><![CDATA[PM2是node进程管理工具，可以利用它来简化很多node应用管理的繁琐任务，如性能监控、自动重启、负载均衡等，而且使用非常简单。 PM2常用命令启动1234567# pm2 start app.js # 启动app.js应用程序# pm2 start app.js -i 4 # cluster mode 模式启动4个app.js的应用实例，4个应用程序会自动进行负载均衡# pm2 start script.sh # 启动 bash 脚本# pm2 start app.js --name=&quot;api&quot; # 启动应用程序并命名为 &quot;api&quot;# pm2 start app.js --name my-api # my-api为PM2进程名称# pm2 start app.js -i 0 # 根据CPU核数启动进程个数# pm2 start app.js --watch # 实时监控app.js的方式启动，当app.js文件有变动时，pm2会自动reload 查看进程12# pm2 list # 列表PM2启动的所有的应用程序# pm2 show 0 或者 # pm2 info 0 # 查看进程详细信息，0为PM2进程id 监控1# pm2 monit # 显示每个应用程序的CPU和内存占用情况 停止12# pm2 stop all # 停止PM2列表中所有的进程# pm2 stop 0 # 停止PM2列表中进程为0的进程 重载12# pm2 reload all # 重载PM2列表中所有的进程# pm2 reload 0 # 重载PM2列表中进程为0的进程 重启12# pm2 restart all # 重启PM2列表中所有的进程# pm2 restart 0 # 重启PM2列表中进程为0的进程 删除PM2进程12# pm2 delete 0 # 删除PM2列表中进程为0的进程# pm2 delete all # 删除PM2列表中所有的进程 日志操作1234# pm2 logs # 显示所有应用程序的日志# pm2 logs 0 # 显示指定应用程序的日志，0为PM2进程id# pm2 flush # 清空所有日志文件# pm2 reloadLogs # 重载所有日志 升级PM212# npm install pm2@lastest -g # 安装最新的PM2版本# pm2 updatePM2 # 升级pm2 更多命令参数请查看帮助1# pm2 --help # 查看帮助 官网]]></content>
       <categories>
-          
-          <category> 文章 </category>
-          
+        <category>文章</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> Linux </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Windows 10版本business_editions和consumer_editions的区别</title>
-      <link href="/2019/06/02/Windows%2010%E7%89%88%E6%9C%ACbusiness_editions%E5%92%8Cconsumer_editions%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
-      <url>/2019/06/02/Windows%2010%E7%89%88%E6%9C%ACbusiness_editions%E5%92%8Cconsumer_editions%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
-      
-        <content type="html"><![CDATA[<p><img src="https://i.loli.net/2019/06/02/5cf3b675dd2e733844.jpg" alt="图片"></p><p><strong>(business editions) <code>VL版</code> 与 (consumer editions) <code>零售版</code></strong></p><a id="more"></a><h1 id="VL版与零售版"><a href="#VL版与零售版" class="headerlink" title="VL版与零售版"></a><strong>VL版与零售版</strong></h1><ul><li><blockquote><p>business_editions 版本IOS镜像包含以下版本：</p></blockquote><ul><li>专业版、企业版、教育版、专业工作站版、专业教育版</li></ul></li></ul><ul><li><blockquote><p>consumer editions 版本IOS镜像包含以下版本：</p></blockquote><ul><li>家庭版、专业版、教育版、家庭单语言版、专业工作站版、专业教育版</li></ul></li></ul><h1 id="Windows-10-各版本大致区别"><a href="#Windows-10-各版本大致区别" class="headerlink" title="Windows 10 各版本大致区别"></a><strong>Windows 10 各版本大致区别</strong></h1><h2 id="家庭版-Home-："><a href="#家庭版-Home-：" class="headerlink" title="家庭版(Home)："></a>家庭版(Home)：</h2><blockquote><p>供家庭用户使用，无法加入<code>Active Directory</code>和<code>Azure AD</code>，不允许<code>远程链接</code>。</p></blockquote><h2 id="专业版-Professional-："><a href="#专业版-Professional-：" class="headerlink" title="专业版(Professional)："></a>专业版(Professional)：</h2><blockquote><p>供小型企业使用 在家庭版基础上增加了<code>域账号加入</code>、<code>bitlocker</code>、<code>企业商店</code>等功能。</p></blockquote><h2 id="企业版-Enterprise-："><a href="#企业版-Enterprise-：" class="headerlink" title="企业版(Enterprise)："></a>企业版(Enterprise)：</h2><blockquote><p>供中大型企业使用 在专业版基础上增加了<code>DirectAccess</code>，<code>AppLocker</code>等高级企业功能。</p></blockquote><h2 id="教育版-Education-："><a href="#教育版-Education-：" class="headerlink" title="教育版(Education)："></a>教育版(Education)：</h2><blockquote><p>供学校使用 (学校职员, 管理人员, 老师和学生) 其功能基本和<code>企业版</code>的一样。</p></blockquote><h2 id="LTSB版："><a href="#LTSB版：" class="headerlink" title="LTSB版："></a>LTSB版：</h2><blockquote><p>无<code>Edge浏览器</code>、无<code>小娜</code>，无<code>磁贴</code>，可选<code>是否下载和安装补丁</code>，其它版都不能自选补丁。</p></blockquote><h2 id="N版："><a href="#N版：" class="headerlink" title="N版："></a>N版：</h2><blockquote><p>带“N”的版本相当于<code>阉割版</code>，移除了<code>Windows Media Player</code>，几乎用不到N版。</p></blockquote><h1 id="Win10各版本详细区别"><a href="#Win10各版本详细区别" class="headerlink" title="Win10各版本详细区别"></a><strong>Win10各版本详细区别</strong></h1><h2 id="Windows-10-企业版（和教育版功能一样，功能最完整版本）"><a href="#Windows-10-企业版（和教育版功能一样，功能最完整版本）" class="headerlink" title="Windows 10 企业版（和教育版功能一样，功能最完整版本）"></a>Windows 10 企业版（和教育版功能一样，功能最完整版本）</h2><h2 id="1、核心功能"><a href="#1、核心功能" class="headerlink" title="1、核心功能"></a><strong>1、核心功能</strong></h2><ul><li><p>熟悉，更好用：自定义开始菜单，Windows Defender 与Windows防火墙，Hiberboot与InstantGo，系统启动更快速，TPM支持，节电模式，Windows更新。</p></li><li><p>Cortana小娜：更自然的语音和按键输入，主动、个性化建议，提醒，从网络、本地以及云中搜索，无需动手，直接喊出“你好，小娜”即可激活。</p></li><li><p>Windows Hello：指纹识别，面部和虹膜识别，企业级安全。</p></li><li><p>多任务操作：虚拟桌面，Snap协同（同一屏幕最多支持显示4个应用），跨不同显示器的Snap功能支持。</p></li><li><p>Microsoft Edge：阅读视图，内置墨水书写支持，整合Cortana小娜。</p></li></ul><h2 id="2、企业特性"><a href="#2、企业特性" class="headerlink" title="2、企业特性"></a><strong>2、企业特性</strong></h2><ul><li><p>基础功能：设备加密，加入域功能，组策略管理器，Bitlocker<code>加密</code>，企业模式Internet Explorer浏览器（<code>EMIE</code>），Assigned Access 8.1（<code>访问分配</code>），远程桌面，Direct Access（<code>直接访问</code>），Windows To Go<code>创建工具</code>，Applocker（<code>应用程序锁定</code>），BranchCache（<code>分支缓存</code>），可通过组策略控制的开始屏幕。</p></li><li><p>管理部署功能：企业应用旁加载功能，移动设备管理，可加入到Azure活动目录，单点登录到云托管应用，Win10企业商店，粒度UX控制，可轻松从专业版升级到企业版。</p></li><li><p>安全：Microsoft Passport登录，企业数据保护，凭据保护，设备保护。</p></li><li><p>Windows即服务：Windows更新，Windows Update for Business，Current Branch for Business（用于企业的当前更新分支）。</p></li></ul><h2 id="Windows-10-教育版"><a href="#Windows-10-教育版" class="headerlink" title="Windows 10 教育版"></a>Windows 10 教育版</h2><ul><li>与企业板功能一致，授权方式不同，可轻松从<code>家庭版</code>升级到<code>教育版</code>，（经过测试<code>专业版</code>也可以通过输入<code>教育版key</code>升级到<code>教育版</code>）</li></ul><h2 id="Windows-10-专业版"><a href="#Windows-10-专业版" class="headerlink" title="Windows 10 专业版"></a>Windows 10 专业版</h2><ul><li><p>与企业版对比【无】以下功能：</p><ul><li><p>基础功能：Direct Access（<code>直接访问</code>），Windows To Go<code>创建工具</code>，Applocker（<code>应用程序锁定</code>），BranchCache（<code>分支缓存</code>），可通过组策略控制的开始屏幕。</p></li><li><p>管理部署功能：粒度UX控制。</p></li><li><p>安全：凭据保护，设备保护。</p></li></ul></li></ul><h2 id="Windows-10-家庭版"><a href="#Windows-10-家庭版" class="headerlink" title="Windows 10 家庭版"></a>Windows 10 家庭版</h2><ul><li><p>与专业版对比【无】以下功能：</p><ul><li><p>基础功能：加入域功能，组策略管理器，Bitlocker<code>加密</code>，企业模式Internet Explorer浏览器（<code>EMIE</code>），Assigned Access 8.1（<code>访问分配</code>），远程桌面，Direct Access（<code>直接访问</code>），Windows To Go<code>创建工具</code>，Applocker（<code>应用程序锁定</code>），BranchCache（<code>分支缓存</code>），可通过组策略控制的开始屏幕。</p></li><li><p>管理部署功能：可加入到Azure活动目录，单点登录到云托管应用，Win10企业商店，粒度UX控制，可轻松从<code>专业版</code>升级到<code>企业版</code>。</p></li><li><p>安全：企业数据保护，凭据保护，设备保护。</p></li><li><p>indows即服务：Windows Update for Business，Current Branch for Business（用于企业的当前更新分支）。</p></li><li><p>Windows 10 企业版长期服务分支2015 LTSB<br>与企业版功能<code>一致</code>，可<code>手动设置更新服务</code>，无<code>Edge浏览器</code>，<code>无商店</code>。</p></li></ul></li></ul><p><strong>可以根据自己的需要自行选择版本</strong></p>]]></content>
-      
-      
+      <tags>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Windows 10版本business_editions和consumer_editions的区别]]></title>
+    <url>%2F2019%2F06%2F02%2FWindows%2010%E7%89%88%E6%9C%ACbusiness_editions%E5%92%8Cconsumer_editions%E7%9A%84%E5%8C%BA%E5%88%AB%2F</url>
+    <content type="text"><![CDATA[(business editions) VL版 与 (consumer editions) 零售版 VL版与零售版 business_editions 版本IOS镜像包含以下版本： 专业版、企业版、教育版、专业工作站版、专业教育版 consumer editions 版本IOS镜像包含以下版本： 家庭版、专业版、教育版、家庭单语言版、专业工作站版、专业教育版 Windows 10 各版本大致区别家庭版(Home)： 供家庭用户使用，无法加入Active Directory和Azure AD，不允许远程链接。 专业版(Professional)： 供小型企业使用 在家庭版基础上增加了域账号加入、bitlocker、企业商店等功能。 企业版(Enterprise)： 供中大型企业使用 在专业版基础上增加了DirectAccess，AppLocker等高级企业功能。 教育版(Education)： 供学校使用 (学校职员, 管理人员, 老师和学生) 其功能基本和企业版的一样。 LTSB版： 无Edge浏览器、无小娜，无磁贴，可选是否下载和安装补丁，其它版都不能自选补丁。 N版： 带“N”的版本相当于阉割版，移除了Windows Media Player，几乎用不到N版。 Win10各版本详细区别Windows 10 企业版（和教育版功能一样，功能最完整版本）1、核心功能 熟悉，更好用：自定义开始菜单，Windows Defender 与Windows防火墙，Hiberboot与InstantGo，系统启动更快速，TPM支持，节电模式，Windows更新。 Cortana小娜：更自然的语音和按键输入，主动、个性化建议，提醒，从网络、本地以及云中搜索，无需动手，直接喊出“你好，小娜”即可激活。 Windows Hello：指纹识别，面部和虹膜识别，企业级安全。 多任务操作：虚拟桌面，Snap协同（同一屏幕最多支持显示4个应用），跨不同显示器的Snap功能支持。 Microsoft Edge：阅读视图，内置墨水书写支持，整合Cortana小娜。 2、企业特性 基础功能：设备加密，加入域功能，组策略管理器，Bitlocker加密，企业模式Internet Explorer浏览器（EMIE），Assigned Access 8.1（访问分配），远程桌面，Direct Access（直接访问），Windows To Go创建工具，Applocker（应用程序锁定），BranchCache（分支缓存），可通过组策略控制的开始屏幕。 管理部署功能：企业应用旁加载功能，移动设备管理，可加入到Azure活动目录，单点登录到云托管应用，Win10企业商店，粒度UX控制，可轻松从专业版升级到企业版。 安全：Microsoft Passport登录，企业数据保护，凭据保护，设备保护。 Windows即服务：Windows更新，Windows Update for Business，Current Branch for Business（用于企业的当前更新分支）。 Windows 10 教育版 与企业板功能一致，授权方式不同，可轻松从家庭版升级到教育版，（经过测试专业版也可以通过输入教育版key升级到教育版） Windows 10 专业版 与企业版对比【无】以下功能： 基础功能：Direct Access（直接访问），Windows To Go创建工具，Applocker（应用程序锁定），BranchCache（分支缓存），可通过组策略控制的开始屏幕。 管理部署功能：粒度UX控制。 安全：凭据保护，设备保护。 Windows 10 家庭版 与专业版对比【无】以下功能： 基础功能：加入域功能，组策略管理器，Bitlocker加密，企业模式Internet Explorer浏览器（EMIE），Assigned Access 8.1（访问分配），远程桌面，Direct Access（直接访问），Windows To Go创建工具，Applocker（应用程序锁定），BranchCache（分支缓存），可通过组策略控制的开始屏幕。 管理部署功能：可加入到Azure活动目录，单点登录到云托管应用，Win10企业商店，粒度UX控制，可轻松从专业版升级到企业版。 安全：企业数据保护，凭据保护，设备保护。 indows即服务：Windows Update for Business，Current Branch for Business（用于企业的当前更新分支）。 Windows 10 企业版长期服务分支2015 LTSB与企业版功能一致，可手动设置更新服务，无Edge浏览器，无商店。 可以根据自己的需要自行选择版本]]></content>
       <categories>
-          
-          <category> 文章 </category>
-          
+        <category>文章</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> windows 10 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Hexo博客加载Live2D动画模型挂件</title>
-      <link href="/2019/05/29/Hexo%E5%8D%9A%E5%AE%A2%E5%8A%A0%E8%BD%BDLive2D%E5%8A%A8%E7%94%BB%E6%A8%A1%E5%9E%8B%E6%8C%82%E4%BB%B6/"/>
-      <url>/2019/05/29/Hexo%E5%8D%9A%E5%AE%A2%E5%8A%A0%E8%BD%BDLive2D%E5%8A%A8%E7%94%BB%E6%A8%A1%E5%9E%8B%E6%8C%82%E4%BB%B6/</url>
-      
-        <content type="html"><![CDATA[<p><img src="https://i.loli.net/2019/06/02/5cf3de26d824099985.jpg" alt="图片"></p><p><strong>基于Hexo博客的Next主题，加载<font color="#dd0000"><code>Live2D</code></font>动画模型挂件</strong></p><a id="more"></a><h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a><strong>简介</strong></h1><blockquote><p><strong>Live2D的工作原理是通过将一系列的2D图像进行平移、旋转和变形等操作，生成一个具有自然动画效果的可动人物模型。<br>由于Live2D只需一系列2D原图即可生成具有类似于3D动画效果的模型，比3D建模耗费的时间和成本更少，因此受到很多游戏制作者，特别是小成本AVG和手游作者的喜爱。另外，Live2D生成的模型相对于真正的3D模型，可以更好地还原手绘风格。<br>Live2D生成的模型并不是真正的3D模型，因此具有一些局限性，比如无法进行大幅度的转身动作。但是貌似<font color="#dd0000"><code>Live2D Euclid</code></font>可以达到这一效果。</strong></p></blockquote><p><img src="https://i.loli.net/2019/05/30/5cef40964412277889.gif" alt="图片"></p><h1 id="安装-amp-部署"><a href="#安装-amp-部署" class="headerlink" title="安装&amp;部署"></a><strong>安装&amp;部署</strong></h1><h2 id="安装Live2D模块"><a href="#安装Live2D模块" class="headerlink" title="安装Live2D模块"></a>安装<font color="#dd0000"><code>Live2D</code></font>模块</h2><ul><li><p>使用如下指令安装<font color="#dd0000"><code>Live2D</code></font>模块、<font color="#dd0000"><code>注意</code></font>需要在博客的<font color="#dd0000"><code>根目录</code></font>通过终端执行</p><table><tr><td bgcolor="#e3f2fd">npm install --save hexo-helper-live2d</td></tr></table></li><li><p>如果不想使用、想彻底卸载，命令如下：</p><table><tr><td bgcolor="#e3f2fd">npm install --save hexo-helper-live2d</td></tr></table>    </li><li><p>安装完成之后，就会在博客的根目录<font color="#dd0000"><code>package.json</code></font>文件中存在依赖</p></li></ul><p><img src="https://i.loli.net/2019/05/30/5ceeb464c592b44530.png" alt="图片"></p><ul><li>在博客根目录的<font color="#dd0000"><code>node_moduels</code></font>文件夹下可以看到安装的<font color="#dd0000"><code>Live2D</code></font>模块</li></ul><p><img src="https://i.loli.net/2019/05/30/5ceeb805ca00c67548.jpg" alt="图片"></p><ul><li>了解更多可参考  <a href="https://github.com/EYHN/hexo-helper-live2d/blob/master/README.zh-CN.md" target="_blank" rel="noopener">github</a>  和 <a href="https://www.npmjs.com/package/hexo-helper-live2d" target="_blank" rel="noopener">官网</a></li></ul><h2 id="配置喜欢的动画模型"><a href="#配置喜欢的动画模型" class="headerlink" title="配置喜欢的动画模型"></a>配置喜欢的动画模型</h2><ul><li><p>有非常多的<font color="#dd0000"><code>Live2D</code></font>动画模型供我们选择：</p><ul><li><p>动画模型效果可以参考 <a href="https://huaji8.top/post/live2d-plugin-2.0/" target="_blank" rel="noopener">这里</a></p></li><li><p>对应的模块下载在 <a href="https://github.com/xiazeyu/live2d-widget-models" target="_blank" rel="noopener">这里</a></p></li></ul></li><li><p>如我使用的是<font color="#dd0000"><code>haruto</code></font>，可以直接在上面的链接下载:</p><ul><li><p>手动下载完成之后将<font color="#dd0000"><code>packages</code></font>里面的所有文件拷贝到博客根目录的<font color="#dd0000"><code>node_moduels</code></font>文件夹下。</p></li><li><p>也可以使用包管理器安装，命令格式：<font color="#dd0000"><code>npm install 模型的包名</code></font>，也会安装在<font color="#dd0000"><code>node_moduels</code></font>目录下。</p></li></ul></li><li><p>配置博客的站点文件</p><ul><li><p>打开博客根目录的配置文件<font color="#dd0000"><code>_config.yml</code></font>，添加如下内容：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"># Live2D</span><br><span class="line">## https://github.com/xiazeyu/live2d-widget.js</span><br><span class="line">## https://l2dwidget.js.org/docs/class/src/index.js~L2Dwidget.html#instance-method-init</span><br><span class="line">live2d:</span><br><span class="line">  model:</span><br><span class="line">    scale: 1</span><br><span class="line">    hHeadPos: 0.5</span><br><span class="line">    vHeadPos: 0.618</span><br><span class="line">    use: live2d-widget-model-tororo // 下载的动画模型名称</span><br><span class="line">  display:</span><br><span class="line">   superSample: 2</span><br><span class="line">   width: 120</span><br><span class="line">   height: 200</span><br><span class="line">   position: left // 模型在网页显示位置</span><br><span class="line">   hOffset: 20</span><br><span class="line">   vOffset: 50</span><br><span class="line"> mobile:</span><br><span class="line">   show: true  // 移动设备是否显示</span><br><span class="line">   scale: 0.5</span><br><span class="line"> react:</span><br><span class="line">   opacityDefault: 0.7</span><br><span class="line">   opacityOnHover: 0.2</span><br></pre></td></tr></table></figure></li></ul></li></ul><h2 id="部署到网站"><a href="#部署到网站" class="headerlink" title="部署到网站"></a>部署到网站</h2><ul><li><p>所有工作完成之后，就可以在自己的网站部署并显示出来了。</p><ul><li><p>清空一下本地缓存<font color="#dd0000"><code>hexo clean</code></font></p></li><li><p>生成博客的文件<font color="#dd0000"><code>hexo g</code></font></p></li><li><p>将文件提交到GitHub仓库并开始部署<font color="#dd0000"><code>hexo d</code></font>，至此刷新你的网站，就可以在文章页面看到你配置的<font color="#dd0000"><code>Live2D</code></font>动画挂件了。</p></li></ul></li></ul><h1 id="发布自己的Live2D模型包"><a href="#发布自己的Live2D模型包" class="headerlink" title="发布自己的Live2D模型包"></a><strong>发布自己的<font color="#dd0000"><code>Live2D</code></font>模型包</strong></h1><ul><li><p>如果你想发布自己的<font color="#dd0000"><code>Live2D</code></font>动画模型包，可以参考如下步骤：</p><ul><li><p>新建一个目录, 用Node环境执行<font color="#dd0000"><code>npm init</code></font>, 包名推荐格式如：<font color="#dd0000"><code>live2d-widget-model-xxx</code></font>。</p></li><li><p>在刚刚创建的目录下创建<font color="#dd0000"><code>assets</code></font>子目录, 把你的模型文件放进去.</p></li><li><p>执行<font color="#dd0000"><code>npm publish</code></font>命令来发布.</p></li><li><p>此时就使用<font color="#dd0000"><code>npm install --save live2d-widget-model-xxx</code></font>来安装自定义的模型包了。</p></li><li><p>安装完成后就可以在配置文件<font color="#dd0000"><code>_config.yml</code></font>中 <font color="#dd0000"><code>model.use</code></font>修改包名来使用了.</p></li></ul></li></ul>]]></content>
-      
-      
+      <tags>
+        <tag>windows 10</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hexo博客加载Live2D动画模型挂件]]></title>
+    <url>%2F2019%2F05%2F29%2FHexo%E5%8D%9A%E5%AE%A2%E5%8A%A0%E8%BD%BDLive2D%E5%8A%A8%E7%94%BB%E6%A8%A1%E5%9E%8B%E6%8C%82%E4%BB%B6%2F</url>
+    <content type="text"><![CDATA[基于Hexo博客的Next主题，加载Live2D动画模型挂件 简介 Live2D的工作原理是通过将一系列的2D图像进行平移、旋转和变形等操作，生成一个具有自然动画效果的可动人物模型。由于Live2D只需一系列2D原图即可生成具有类似于3D动画效果的模型，比3D建模耗费的时间和成本更少，因此受到很多游戏制作者，特别是小成本AVG和手游作者的喜爱。另外，Live2D生成的模型相对于真正的3D模型，可以更好地还原手绘风格。Live2D生成的模型并不是真正的3D模型，因此具有一些局限性，比如无法进行大幅度的转身动作。但是貌似Live2D Euclid可以达到这一效果。 安装&amp;部署安装Live2D模块 使用如下指令安装Live2D模块、注意需要在博客的根目录通过终端执行 npm install --save hexo-helper-live2d 如果不想使用、想彻底卸载，命令如下： npm install --save hexo-helper-live2d 安装完成之后，就会在博客的根目录package.json文件中存在依赖 在博客根目录的node_moduels文件夹下可以看到安装的Live2D模块 了解更多可参考 github 和 官网 配置喜欢的动画模型 有非常多的Live2D动画模型供我们选择： 动画模型效果可以参考 这里 对应的模块下载在 这里 如我使用的是haruto，可以直接在上面的链接下载: 手动下载完成之后将packages里面的所有文件拷贝到博客根目录的node_moduels文件夹下。 也可以使用包管理器安装，命令格式：npm install 模型的包名，也会安装在node_moduels目录下。 配置博客的站点文件 打开博客根目录的配置文件_config.yml，添加如下内容： 12345678910111213141516171819202122# Live2D## https://github.com/xiazeyu/live2d-widget.js## https://l2dwidget.js.org/docs/class/src/index.js~L2Dwidget.html#instance-method-initlive2d: model: scale: 1 hHeadPos: 0.5 vHeadPos: 0.618 use: live2d-widget-model-tororo // 下载的动画模型名称 display: superSample: 2 width: 120 height: 200 position: left // 模型在网页显示位置 hOffset: 20 vOffset: 50 mobile: show: true // 移动设备是否显示 scale: 0.5 react: opacityDefault: 0.7 opacityOnHover: 0.2 部署到网站 所有工作完成之后，就可以在自己的网站部署并显示出来了。 清空一下本地缓存hexo clean 生成博客的文件hexo g 将文件提交到GitHub仓库并开始部署hexo d，至此刷新你的网站，就可以在文章页面看到你配置的Live2D动画挂件了。 发布自己的Live2D模型包 如果你想发布自己的Live2D动画模型包，可以参考如下步骤： 新建一个目录, 用Node环境执行npm init, 包名推荐格式如：live2d-widget-model-xxx。 在刚刚创建的目录下创建assets子目录, 把你的模型文件放进去. 执行npm publish命令来发布. 此时就使用npm install --save live2d-widget-model-xxx来安装自定义的模型包了。 安装完成后就可以在配置文件_config.yml中 model.use修改包名来使用了.]]></content>
       <categories>
-          
-          <category> 文章 </category>
-          
+        <category>文章</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> hexo美化 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>markdown测试</title>
-      <link href="/2019/05/27/Markdown%E6%B5%8B%E8%AF%95/"/>
-      <url>/2019/05/27/Markdown%E6%B5%8B%E8%AF%95/</url>
-      
-        <content type="html"><![CDATA[<p><img src="https://i.loli.net/2019/05/28/5cec15deb564570344.jpg" alt="图片"></p><h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><a id="more"></a><ul><li>列表1</li><li>列表2<br> a 子列表1<br> b 子列表2</li><li>列表3</li></ul><hr><p>文本</p><hr><p><a href="https://www.baidu.com" target="_blank" rel="noopener">超链接</a></p><p><em>斜体字</em><br><strong>粗体字</strong></p><p><code>&lt;html&gt;&lt;/html&gt;</code></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;title&gt;标题&lt;/title&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure><blockquote><p>END</p></blockquote>]]></content>
-      
-      
+      <tags>
+        <tag>hexo美化</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[markdown测试]]></title>
+    <url>%2F2019%2F05%2F27%2FMarkdown%E6%B5%8B%E8%AF%95%2F</url>
+    <content type="text"><![CDATA[一级标题二级标题三级标题 列表1 列表2 a 子列表1 b 子列表2 列表3 文本 超链接 斜体字粗体字 &lt;html&gt;&lt;/html&gt; 12345&lt;html&gt; &lt;head&gt; &lt;title&gt;标题&lt;/title&gt; &lt;/head&gt;&lt;/html&gt; END]]></content>
       <categories>
-          
-          <category> 文章 </category>
-          
+        <category>文章</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> 分享 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Hello World</title>
-      <link href="/2019/05/27/hello-world/"/>
-      <url>/2019/05/27/hello-world/</url>
-      
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-  
-  
+      <tags>
+        <tag>分享</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2019%2F05%2F27%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
 </search>
